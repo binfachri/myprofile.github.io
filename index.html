@@ -261,7 +261,109 @@
 		</div>
 	</section>
 	<!--================ End Newsletter Area =================-->
-
+ <section class="popular_place padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="section_tittle text-center">
+                        <img src="img/section_tittle_img.png" alt="" align="middle">
+                        <h2>Zona<span> Seru</span> </h2>
+                        <p>Lakukan dengan sepenuh Hati jangan asal-asalan yah</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="card" style="min-height: 90%; min-width: 90%; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" >
+                    <form style="margin: 12px">
+                        <h3>Apa Ibukota <span>Jawa Barat ?</span></h3>
+                        <input type="radio" name="answer" value="a." class="hidden"> <font size="4"> Jakarta</font> <br>
+                        <input type="radio" name="answer" value="b." class="hidden"> <font size="4"> Surabaya</font> <br>
+                        <input type="radio" name="answer" value="c." class="hidden"> <font size="4"> Depok</font>  <br>
+                        <input type="radio" name="answer" value="d."> <font size="4">Surakarta</font> <br>
+                        <br>
+                        <br>
+                        <h3>Apa Ibukota <span>Jawa Tengah ?</span></h3>
+                        <input type="radio" name="answer" value="a." class="hidden"> <font size="4"> Jakarta</font> <br>
+                        <input type="radio" name="answer" value="b." class="hidden"> <font size="4"> Surabaya</font> <br>
+                        <input type="radio" name="answer" value="c." class="hidden"> <font size="4"> Semarang</font>  <br>
+                        <input type="radio" name="answer" value="d."> <font size="4">Surakarta</font> <br>
+                        <br>
+                        <br>
+                        <h3>Apa Ibukota <span>Jawa Timur ?</span></h3>
+                        <input type="radio" name="answer" value="a." class="hidden"> <font size="4"> Jakarta</font> <br>
+                        <input type="radio" name="answer" value="b." class="hidden"> <font size="4"> Surabaya</font> <br>
+                        <input type="radio" name="answer" value="c." class="hidden"> <font size="4"> Depok</font>  <br>
+                        <input type="radio" name="answer" value="d."> <font size="4">Surakarta</font> <br>
+                        <br>
+                        <button class="btn_1" type="submit" id="submit" onclick="generateQuiz">Get Result</button>
+                        <script type="text/javascript">
+                            function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+                                var myQuestions = [{
+                                        question: "What is 10/2?",
+                                            answers: {
+                                                a: '3',
+                                                 b: '5',
+                                                c: '115'
+                                        },
+                                    correctAnswer: 'b'
+                                },
+                                {
+                                        question: "What is 30/3?",
+                                        answers: {
+                                                a: '3',
+                                                b: '5',
+                                                c: '10'
+                                        },
+                                    correctAnswer: 'c'
+                                }
+                            ];
+                            }
+                            function showQuestions(questions, quizContainer){
+                            // code will go here
+                                var output = [];
+                                var answers;
+                                // for each question...
+                                for(var i=0; i<questions.length; i++){
+        
+                                // first reset the list of answers
+                                answers = [];
+                                // for each available answer to this question...
+                                for(letter in questions[i].answers){
+                                // ...add an html radio button
+                                answers.push(
+                                    '<label>'
+                                     + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                                    + letter + ': '
+                                    + questions[i].answers[letter]
+                                    + '</label>'
+                                );
+                            }
+                        
+                            // add this question and its answers to the output
+                            output.push(
+                            '<div class="question">' + questions[i].question + '</div>'
+                            + '<div class="answers">' + answers.join('') + '</div>'
+                            );
+                        }
+                        // finally combine our output list into one string of html and put it on the page
+                        quizContainer.innerHTML = output.join('');
+                    }
+                            function showResults(questions, quizContainer, resultsContainer){
+                            // code will go here
+                            
+                            }   
+                            // show the questions
+                            showQuestions(questions, quizContainer);
+                            // when user clicks submit, show results
+                            submitButton.onclick = function(){
+                            showResults(questions, quizContainer, resultsContainer);
+                        
+                            }
+                        </script>
+                    </form>
+                </div>
+        </div>
+    </section>
 	<!--================Footer Area =================-->
 	<footer class="footer_area">
 		<div class="container">
